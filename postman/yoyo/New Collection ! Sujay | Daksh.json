@@ -7,6 +7,48 @@
 	},
 	"item": [
 		{
+			"name": "ok",
+			"item": [],
+			"id": "8194795c-53fe-4c29-b4d3-ddc26ec822c6",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "6fd26af0-e72e-4610-a413-ae122633144b",
+						"type": "text/javascript",
+						"exec": [
+							"qwd",
+							"",
+							"wqd",
+							"pm.globals.unset(\"variable_key\");",
+							"pm.collectionVariables.set(\"variable_key\", \"variable_value\");",
+							"pm.globals.set(\"variable_key\", \"variable_value\");",
+							"pm.environment.set(\"variable_key\", \"variable_value\");"
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "35b8203c-6d0c-450b-bd30-35ddf496ce53",
+						"type": "text/javascript",
+						"exec": [
+							"pm.variables.get(\"variable_key\");",
+							"pm.collectionVariables.set(\"variable_key\", \"variable_value\");",
+							"pm.environment.unset(\"variable_key\");",
+							"pm.collectionVariables.unset(\"variable_key\");",
+							"pm.sendRequest(\"https://postman-echo.com/get\", function (err, response) {",
+							"    console.log(response.json());",
+							"});",
+							"pm.sendRequest(\"https://postman-echo.com/get\", function (err, response) {",
+							"    console.log(response.json());",
+							"});"
+						]
+					}
+				}
+			]
+		},
+		{
 			"name": "kjqwndkjnwqdkjnkjqwndkjwqndjknwd",
 			"event": [
 				{
@@ -52,7 +94,7 @@
 						}
 					]
 				},
-				"method": "PATCH",
+				"method": "GET",
 				"header": [
 					{
 						"key": "knkjnkjnkjn",
@@ -73,7 +115,11 @@
 					"file": {}
 				},
 				"url": {
-					"raw": ""
+					"raw": "google.com",
+					"host": [
+						"google",
+						"com"
+					]
 				},
 				"description": "This returns a `token` that you can use to retrieve information later on.\n\nWe have included a test to confirm if a token is returned. We have also added test scripts to copy the token to the `token` collection variable. This makes it easy for us to reuse this token in other requests in the collection."
 			},
@@ -186,7 +232,7 @@
 					"id": "e3dfe760-c2ef-430f-8702-d00c97562e91",
 					"name": "Register",
 					"originalRequest": {
-						"method": "GET",
+						"method": "POST",
 						"header": [],
 						"url": {
 							"raw": "qwd",
@@ -334,23 +380,41 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "0d1b86f5-7e32-449c-8c6b-bc04dd63a3be",
+				"id": "fb50a3ed-60b4-4df8-8b66-8ffb2c389431",
 				"type": "text/javascript",
 				"exec": [
 					"qwqwdqw",
 					"debuggerqwd",
 					"wq",
-					"kjnkjnknqwlkdmlkmlkqwdwqdqwqwdwqd"
+					"kjnkjnknqwlkdmlkmlkqwdwqdqwqwdwqdqwd",
+					"",
+					"qwqwdqw",
+					"qwqwdqwqwdqwd"
 				]
 			}
 		},
 		{
 			"listen": "test",
 			"script": {
-				"id": "fdf387ed-890a-4c7e-81c8-0f9b8cc6646f",
+				"id": "5ada90d2-b7cd-471a-8496-68a6d38d44d8",
 				"type": "text/javascript",
 				"exec": [
-					""
+					"qwd",
+					"qwd",
+					"qwdqwd",
+					"wq",
+					"debuggerwqd",
+					"qwd",
+					"pm.test(\"Body matches string\", function () {",
+					"    pm.expect(pm.response.text()).to.include(\"string_you_want_to_search\");",
+					"});",
+					"pm.test(\"Body matches string\", function () {",
+					"    pm.expect(pm.response.text()).to.include(\"string_you_want_to_search\");",
+					"});",
+					"pm.test(\"Body matches string\", function () {",
+					"    pm.expect(pm.response.text()).to.include(\"string_you_want_to_search\");",
+					"});",
+					"pm.collectionVariables.unset(\"variable_key\");"
 				]
 			}
 		}
