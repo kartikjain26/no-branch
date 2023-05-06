@@ -1,0 +1,361 @@
+{
+	"info": {
+		"_postman_id": "11d04e7f-1eec-4a4a-817b-ff395628408f",
+		"name": "New Collection ! Sujay | Daksh",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_uid": "455490-11d04e7f-1eec-4a4a-817b-ff395628408f"
+	},
+	"item": [
+		{
+			"name": "kjqwndkjnwqdkjnkjqwndkjwqndjknwd",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a51a9e56-770a-4743-82f9-f4f3c0715be2",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "3e753b00-4121-4add-aa35-12c777f09be9",
+						"exec": [
+							"pm.environment.get(\"variable_key\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "3a39c355-c647-4269-9ed6-86c86c96f20b",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true,
+				"strictSSL": true,
+				"followOriginalHttpMethod": true
+			},
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "qwdqwdqwd",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "qwd",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "knkjnkjnkjn",
+						"value": "kjnkjn",
+						"description": "jkn",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "wefewf",
+						"value": "wefewf",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "file",
+					"file": {}
+				},
+				"url": {
+					"raw": "kjnkjnkjnkjn--qwd1qwd -- hiasda ---12312312-312-3-12-312-311",
+					"host": [
+						"kjnkjnkjnkjn--qwd1qwd -- hiasda ---12312312-312-3-12-312-311"
+					]
+				},
+				"description": "This returns a `token` that you can use to retrieve information later on.\n\nWe have included a test to confirm if a token is returned. We have also added test scripts to copy the token to the `token` collection variable. This makes it easy for us to reuse this token in other requests in the collection."
+			},
+			"response": [
+				{
+					"id": "2c5b290c-538d-4b92-81c6-da9820949aab",
+					"name": "Register",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "12e21eqwd\n\n\nqwd\n\n",
+							"options": {
+								"raw": {
+									"language": "javascript"
+								}
+							}
+						},
+						"url": {
+							"raw": "kjnkjnkjnkjn",
+							"host": [
+								"kjnkjnkjnkjn"
+							]
+						}
+					},
+					"_postman_previewlanguage": "Text",
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Register",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a9268778-a25d-48b9-80cd-3251e093eb1d",
+						"exec": [
+							"pm.test(\"An access token is returned\", () => {",
+							"pm.globals.set(\"variable_key\", \"variable_value\");",
+							"pm.environment.unset(\"variable_key\");",
+							"pm.environment.unset(\"variable_key\");",
+							"    pm.expect(pm.response.json()).to.have.property('token')",
+							"    pm.expect(pm.response.json().token).to.be.a('string')",
+							"    // Set the collection-scope \"token\" variable to the token received from the API",
+							"    // This lets us use it in other requests",
+							"    pm.collectionVariables.set('token', pm.response.json().token)",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "2ac0a074-cc1f-493f-847c-5122533b0e0e",
+						"exec": [
+							"pm.environment.get(\"variable_key\");",
+							"pm.globals.get(\"variable_key\");",
+							"pm.environment.set(\"variable_key\", \"variable_value\");",
+							"pm.variables.get(\"variable_key\");",
+							"pm.collectionVariables.get(\"variable_key\");",
+							"pm.globals.set(\"variable_key\", \"variable_value\");",
+							"pm.collectionVariables.set(\"variable_key\", \"variable_value\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "38f704a3-e669-46cb-ac2b-7d5252ab61d4",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "wqd",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "12e21eqwd\n\n\nqwd\n\n",
+					"options": {
+						"raw": {
+							"language": "javascript"
+						}
+					}
+				},
+				"url": {
+					"raw": "kjnkjnkjnkjqwdn--1wdwefqwd",
+					"host": [
+						"kjnkjnkjnkjqwdn--1wdwefqwd"
+					]
+				},
+				"description": "This returns a `token` that you can use to retrieve information later on.\n\nWe have included a test to confirm if a token is returned. We have also added test scripts to copy the token to the `token` collection variable. This makes it easy for us to reuse this token in other requests in the collection."
+			},
+			"response": [
+				{
+					"id": "e3dfe760-c2ef-430f-8702-d00c97562e91",
+					"name": "Register",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "qwd",
+							"host": [
+								"qwd"
+							]
+						}
+					},
+					"_postman_previewlanguage": "Text",
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Get name Copy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "7db3a157-c8c7-4617-b83c-f3b4fd802088",
+						"exec": [
+							"pm.test(\"A name is returned\", () => {",
+							"    pm.expect(pm.response.json()).to.have.property('name');",
+							"    pm.expect(pm.response.json().name).to.be.a('string');",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "2f6927c8-3341-4500-898f-78f73bf7e364",
+						"exec": [
+							"efwefwwefwef"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "09610ad6-b8ea-4b64-8249-249b671be1e0",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/mywdqqname?token={{token}}efwefwwefewffewwweefwdwqdwdqd -- hi s",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"mywdqqname"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "{{token}}efwefwwefewffewwweefwdwqdwdqd -- hi s"
+						}
+					]
+				},
+				"description": "This request uses the saved `token` collection variable to access a secret 'name' stored against that token.\n\nIn this request, we used the `token` collection variable as a query param to fetch the name generated for that token. We have added a test to check that a name is correctly returned."
+			},
+			"response": []
+		},
+		{
+			"name": "Unregister Copy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "12cb628d-3052-4fe7-85d5-828cf064a3d3",
+						"exec": [
+							"pm.test(\"Returns 200 OK status\", () => {",
+							"    pm.response.to.have.status(200)",
+							"})qwd",
+							"",
+							"",
+							"qwd",
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "e477caa9-6bb3-44bb-9ce9-433c1ef4163e",
+						"exec": [
+							"qwd",
+							"qwd",
+							"",
+							"dwq",
+							"pm.collectionVariables.get(\"variable_key\");",
+							"pm.environment.set(\"variable_key\", \"variable_value\");",
+							"pm.collectionVariables.set(\"variable_key\", \"variable_value\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "bdd6574b-440f-4974-9320-d2ea01920889",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"token\": \"{{token}}\"qwddwq\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/unregisterqwdwqd",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"unregisterqwdwqd"
+					]
+				},
+				"description": "This request un-registers a token by using the token collection variable in the POST body.\n\nWe also added a test to ensure the response has a 200 OK status code."
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "0d1b86f5-7e32-449c-8c6b-bc04dd63a3be",
+				"type": "text/javascript",
+				"exec": [
+					"qwqwdqw",
+					"debuggerqwd",
+					"wq",
+					"kjnkjnknqwlkdmlkmlkqwdwqdqwqwdwqd"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "fdf387ed-890a-4c7e-81c8-0f9b8cc6646f",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
