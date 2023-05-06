@@ -73,10 +73,7 @@
 					"file": {}
 				},
 				"url": {
-					"raw": "kjnkjnkjnkjn--qwd1qwd -- hiasda ---12312312-312-3-12-312-311",
-					"host": [
-						"kjnkjnkjnkjn--qwd1qwd -- hiasda ---12312312-312-3-12-312-311"
-					]
+					"raw": ""
 				},
 				"description": "This returns a `token` that you can use to retrieve information later on.\n\nWe have included a test to confirm if a token is returned. We have also added test scripts to copy the token to the `token` collection variable. This makes it easy for us to reuse this token in other requests in the collection."
 			},
