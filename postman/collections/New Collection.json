@@ -1,44 +1,53 @@
 {
 	"info": {
-		"_postman_id": "0c8da86f-54ea-4270-86c5-92d8e527013a",
+		"_postman_id": "1b8c624b-cc1b-45f4-b2ab-cec8dec647ca",
 		"name": "New Collection",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_uid": "455490-0c8da86f-54ea-4270-86c5-92d8e527013a"
+		"_uid": "4518432-1b8c624b-cc1b-45f4-b2ab-cec8dec647ca"
 	},
 	"item": [
 		{
 			"name": "New Request",
-			"id": "e6c1a68c-e291-4b63-a052-7491e7db7b35",
+			"id": "d6919259-8ffd-489d-9f72-9e4c42b4704a",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
 			"request": {
 				"method": "GET",
-				"header": []
+				"header": [],
+				"url": {
+					"raw": ""
+				}
 			},
 			"response": []
 		},
 		{
 			"name": "New Request Copy 2",
-			"id": "6d8b0502-afa5-4ff6-a290-e2ae143dff0b",
+			"id": "46492109-7309-41cb-832b-4565fb2a34e9",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
 			"request": {
 				"method": "GET",
-				"header": []
+				"header": [],
+				"url": {
+					"raw": ""
+				}
 			},
 			"response": []
 		},
 		{
 			"name": "New Request Copy",
-			"id": "f3044798-3d7a-4c57-b600-e5f19134b367",
+			"id": "37c3fea2-358b-46a7-8ecf-5e90f665ad09",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
 			"request": {
 				"method": "GET",
-				"header": []
+				"header": [],
+				"url": {
+					"raw": ""
+				}
 			},
 			"response": []
 		}

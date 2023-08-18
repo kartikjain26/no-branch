@@ -1,0 +1,1989 @@
+{
+	"info": {
+		"_postman_id": "c2dd20aa-58fa-4257-856b-a9226fafd56a",
+		"name": "IoT device management API",
+		"description": "# 📱 Get started here\n\n[Creating your first collection](https://postman.postman.co/workspace/1bef9909-44c3-4d14-a45d-bf38319cb1d6/documentation/4518432-21b69609-f454-41ba-98de-dc1e03d14864?entity=&branch=&version=)[Creating your first collection](https://www.google.com)[Authorizing requests](https://okok.com)[Building requests](https://postman.postman.co/workspace/1bef9909-44c3-4d14-a45d-bf38319cb1d6/documentation/4518432-21b69609-f454-41ba-98de-dc1e03d14864?entity=&branch=&version=)[Building requests](https://yoyo.com)This collection is a blueprint template, demonstrating the core features of the IoT device management REST API, including device management, configuration, monitoring, control, diagnostics, maintenance and analytics. You can use this template as inspiration to build your custom API or extend it to work with one you've already started working on.\n\n### 🔐 Authentication and authorization\n\nThis template assumes the user making requests to the IoT device management API would be authenticated, for example using a Bearer token. You can choose an authentication method to apply to the whole collection by selecting the collection and navigating to the Authorization tab.\n\n## 🔖 How to use this template?\n\n#### Step 1: Send the requests\n\nSend the requests and view the response returned by the mock API, or check out the examples included.\n\n#### Step 2: Update the base URL\n\nSelect the collection and navigate to the “Variables” tab. Update the `base_url` variable with your API's URL.\n\n#### Step 3: Customize the requests\n\nUpdate the different parts of the requests to suit your use case, including the request body, authorization, documentation, headers, tests, and path parameters.\n\n#### Step 4: Continue building the collection\n\nCreate requests in this collection to test the new API endpoints you develop.\n\n## ℹ️ **Resources**\n\n[Building requests](https://google.com)  \n[Authorizing requests](https://postman.postman.co/workspace/empty~1bef9909-44c3-4d14-a45d-bf38319cb1d6/collection/4518432-21b69609-f454-41ba-98de-dc1e03d14864)  \n[Using variables](https://learning.postman.com/docs/sending-requests/variables/)  \n[Creating your first collection](https://learning.postman.com/docs/getting-started/creating-the-first-collection/)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_uid": "4518432-c2dd20aa-58fa-4257-856b-a9226fafd56a"
+	},
+	"item": [
+		{
+			"name": "Device management",
+			"item": [
+				{
+					"name": "Get devices",
+					"id": "fcb297ca-def5-4ae3-a946-1c510bbb0f0d",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/devices",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"devices"
+							]
+						},
+						"description": "Returns information about the connected devices, including ID, name, type, and status."
+					},
+					"response": [
+						{
+							"id": "e1161110-d285-4637-bf57-bc7e48c4ce1c",
+							"name": "Get devices",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/devices",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"devices"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"devices\": [\n    {\n      \"id\": \"device1\",\n      \"name\": \"Smart TV\",\n      \"type\": \"sensor\",\n      \"status\": \"online\"\n    },\n    {\n      \"id\": \"device2\",\n      \"name\": \"Smartphone\",\n      \"type\": \"actuator\",\n      \"status\": \"offline\"\n    }\n  ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Add device",
+					"id": "6dcd6111-79a3-4cac-a203-5a304aa87610",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Smart lock\",\n  \"type\": \"sensor\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/devices",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"devices"
+							]
+						},
+						"description": "Adds a new device to the system."
+					},
+					"response": [
+						{
+							"id": "ae389eef-127e-41c5-9d9c-eff57b1bf83d",
+							"name": "Add device",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"Smart lock\",\n  \"type\": \"sensor\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/devices",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"devices"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"id\": \"device3\",\n  \"name\": \"Smart lock\",\n  \"type\": \"sensor\",\n  \"status\": \"offline\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Remove device",
+					"id": "46b7a7a6-4a80-461d-85bc-7e9199420a20",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/devices/:device_id",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"devices",
+								":device_id"
+							],
+							"variable": [
+								{
+									"key": "device_id",
+									"value": "device2"
+								}
+							]
+						},
+						"description": "Removes a device from the system identified by the device ID."
+					},
+					"response": [
+						{
+							"id": "f6b4cd5c-1b7b-431a-9ddc-93b00b3ccefb",
+							"name": "Remove device",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/devices/:device_id",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"devices",
+										":device_id"
+									],
+									"variable": [
+										{
+											"key": "device_id",
+											"value": "device2"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"device_id\": \"device2\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Update device",
+					"id": "b2240c4f-2bd2-4747-ac73-d32d33e219b9",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Smartwatch\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/devices/:device_id",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"devices",
+								":device_id"
+							],
+							"variable": [
+								{
+									"key": "device_id",
+									"value": "device1"
+								}
+							]
+						},
+						"description": "Updates the device name of an existing device identifed by the device ID."
+					},
+					"response": [
+						{
+							"id": "f7a9936b-f88e-4d27-a67e-eca2f3be0e43",
+							"name": "Update device",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"Smartwatch\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/devices/:device_id",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"devices",
+										":device_id"
+									],
+									"variable": [
+										{
+											"key": "device_id",
+											"value": "device1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"id\": \"device1\",\n  \"name\": \"Smartwatch\",\n  \"type\": \"sensor\",\n  \"status\": \"online\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get device status",
+					"id": "a25ef331-63f7-494d-8243-31d41a96cd68",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/devices/:device_id/status",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"devices",
+								":device_id",
+								"status"
+							],
+							"variable": [
+								{
+									"key": "device_id",
+									"value": "device1"
+								}
+							]
+						},
+						"description": "Returns the status(online/offline) of the device identified by the device ID."
+					},
+					"response": [
+						{
+							"id": "d49c4e78-64b8-4b03-9965-233ba2449be9",
+							"name": "Get device status",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/devices/:device_id/status",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"devices",
+										":device_id",
+										"status"
+									],
+									"variable": [
+										{
+											"key": "device_id",
+											"value": "device1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"id\": \"device1\",\n  \"status\": \"online\"\n}"
+						}
+					]
+				}
+			],
+			"id": "814aa826-2775-47bd-9bcb-fe853e7d84f4",
+			"description": "The **Internet of Things (IoT)** refers to the network of physical devices, vehicles, appliances, and other objects embedded with sensors, software, and connectivity that enables them to collect and exchange data over the internet.\n\n**IoT device management** refers to the set of practices, processes, and tools employed to efficiently and effectively control, monitor, and maintain Internet of Things (IoT) devices throughout their lifecycle. It involves activities such as device provisioning, configuration, monitoring, diagnostics, maintenance, and security management.\n\nThis folder includes endpoints for fetching device information, adding a new device, removing a device, updating an existing device and getting the device status."
+		},
+		{
+			"name": "Device configuration",
+			"item": [
+				{
+					"name": "Get configuration",
+					"id": "57362710-9f5a-4fd3-b745-cf5620b72d26",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/devices/:device_id/configuration",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"devices",
+								":device_id",
+								"configuration"
+							],
+							"variable": [
+								{
+									"key": "device_id",
+									"value": "device1"
+								}
+							]
+						},
+						"description": "Returns the configuration settings of the device, including sampling rate and threshold."
+					},
+					"response": [
+						{
+							"id": "7ec3fc10-eacc-4d90-a2de-2501254c3085",
+							"name": "Get configuration",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/devices/:device_id/configuration",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"devices",
+										":device_id",
+										"configuration"
+									],
+									"variable": [
+										{
+											"key": "device_id",
+											"value": "device1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"device\": \"device1\",\n  \"configuration\": {\n    \"samplingRate\": 5,\n    \"threshold\": 10\n  }\n}"
+						}
+					]
+				},
+				{
+					"name": "Update configuration",
+					"id": "464765ff-5890-42e3-948f-64c2ab669b0f",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"samplingRate\": 10,\n  \"threshold\": 15\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/devices/:device_id/configuration",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"devices",
+								":device_id",
+								"configuration"
+							],
+							"variable": [
+								{
+									"key": "device_id",
+									"value": "device1"
+								}
+							]
+						},
+						"description": "Updates the sampling rate and threshold of the existing device."
+					},
+					"response": [
+						{
+							"id": "d6395560-ad0d-4647-b7ad-b12c86441559",
+							"name": "Update configuration",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"samplingRate\": 10,\n  \"threshold\": 15\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/devices/:device_id/configuration",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"devices",
+										":device_id",
+										"configuration"
+									],
+									"variable": [
+										{
+											"key": "device_id",
+											"value": "device1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"device\": \"device1\",\n  \"configuration\": {\n    \"samplingRate\": 10,\n    \"threshold\": 15\n  }\n}"
+						}
+					]
+				},
+				{
+					"name": "Reset configuration",
+					"id": "63d135e4-61fe-4558-915b-dde934138602",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/devices/:device_id/configuration",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"devices",
+								":device_id",
+								"configuration"
+							],
+							"variable": [
+								{
+									"key": "device_id",
+									"value": "device1"
+								}
+							]
+						},
+						"description": "Deletes/Resets the configuration of the device identified by the device ID."
+					},
+					"response": [
+						{
+							"id": "077bc009-04c5-4ce8-a362-824603868d51",
+							"name": "Reset configuration",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/devices/:device_id/configuration",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"devices",
+										":device_id",
+										"configuration"
+									],
+									"variable": [
+										{
+											"key": "device_id",
+											"value": "device1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"device_id\": \"device1\"\n}"
+						}
+					]
+				}
+			],
+			"id": "d73d9195-4eae-414b-a0d5-1d628c82e3bf",
+			"description": "Device configuration is the process of managing and controlling the settings and parameters of IoT devices within an IoT ecosystem. It involves remotely configuring and customizing the behavior, functionality, and operational characteristics of IoT devices to meet specific requirements or adapt to changing conditions."
+		},
+		{
+			"name": "Device monitoring",
+			"item": [
+				{
+					"name": "Get real-time data",
+					"id": "68572823-da00-4713-aa2f-59d17967d773",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/devices/:device_id/data",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"devices",
+								":device_id",
+								"data"
+							],
+							"variable": [
+								{
+									"key": "device_id",
+									"value": "device1"
+								}
+							]
+						},
+						"description": "Returns the real-time data of the device, including its temperature and humidity."
+					},
+					"response": [
+						{
+							"id": "0afb05ec-b42d-4ed8-91e4-f0b7c771e376",
+							"name": "Get real-time data",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/devices/:device_id/data",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"devices",
+										":device_id",
+										"data"
+									],
+									"variable": [
+										{
+											"key": "device_id",
+											"value": "device1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"device\": \"device1\",\n  \"data\": {\n    \"temperature\": 25.5,\n    \"humidity\": 50.2\n  },\n  \"timestamp\": \"2023-05-29T10:30:00Z\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get device logs",
+					"id": "21aab78a-2c22-4f70-b6c1-620dd13c00c3",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/devices/:device_id/logs",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"devices",
+								":device_id",
+								"logs"
+							],
+							"variable": [
+								{
+									"key": "device_id",
+									"value": "device1"
+								}
+							]
+						},
+						"description": "Returns logs or event data generated by devices."
+					},
+					"response": [
+						{
+							"id": "e3a0378d-a9a5-445b-bb13-7236a4060422",
+							"name": "Get device logs",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/devices/:device_id/logs",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"devices",
+										":device_id",
+										"logs"
+									],
+									"variable": [
+										{
+											"key": "device_id",
+											"value": "device1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"device\": \"device1\",\n  \"logs\": [\n    {\n      \"message\": \"Device started\",\n      \"timestamp\": \"2023-05-29T10:00:00Z\"\n    },\n    {\n      \"message\": \"Data received\",\n      \"timestamp\": \"2023-05-29T10:01:00Z\"\n    }\n  ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Get alerts and notifications",
+					"id": "8a651e4f-ce04-4703-9cd7-c543d4e66ea8",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/devices/:device_id/alerts",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"devices",
+								":device_id",
+								"alerts"
+							],
+							"variable": [
+								{
+									"key": "device_id",
+									"value": "device1"
+								}
+							]
+						},
+						"description": "Returns the alerts and notifications for a device identified by the device ID."
+					},
+					"response": [
+						{
+							"id": "df9626d1-8ea6-41b4-a6f5-2111e9984797",
+							"name": "Get alerts and notifications",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/devices/:device_id/alerts",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"devices",
+										":device_id",
+										"alerts"
+									],
+									"variable": [
+										{
+											"key": "device_id",
+											"value": "device1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"device\": \"device1\",\n  \"alerts\": [\n    {\n      \"type\": \"temperature\",\n      \"message\": \"High temperature detected\",\n      \"timestamp\": \"2023-05-29T10:30:00Z\"\n    }\n  ]\n}"
+						}
+					]
+				}
+			],
+			"id": "17585469-9b76-4ec5-aab1-ea2c0fd937c7",
+			"description": "Device monitoring is the process of continuously observing and tracking the operational status, performance metrics, and data generated by IoT devices within an IoT ecosystem. It involves the collection, analysis, and visualization of device data to ensure their proper functioning, detect anomalies, and derive insights for informed decision-making."
+		},
+		{
+			"name": "Device control",
+			"item": [
+				{
+					"name": "Add device commands",
+					"id": "412008b1-16c6-42bf-ade8-a164befed911",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"command\": \"start\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/devices/:device_id/commands",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"devices",
+								":device_id",
+								"commands"
+							],
+							"variable": [
+								{
+									"key": "device_id",
+									"value": "device1"
+								}
+							]
+						},
+						"description": "Adds a command or instruction to the device identified by the device ID."
+					},
+					"response": [
+						{
+							"id": "528b64ed-31b1-4074-a4d7-cffc9d176ed2",
+							"name": "Add device commands",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"command\": \"start\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/devices/:device_id/commands",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"devices",
+										":device_id",
+										"commands"
+									],
+									"variable": [
+										{
+											"key": "device_id",
+											"value": "device1"
+										}
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"device\": \"device1\",\n  \"command\": \"start\",\n  \"status\": \"success\",\n  \"timestamp\": \"2023-05-29T11:00:00Z\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Add remote control",
+					"id": "594ec8cd-01e1-47c3-ac47-c5daff87f2fd",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"action\": \"turn_on\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/devices/:device_id/control",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"devices",
+								":device_id",
+								"control"
+							],
+							"variable": [
+								{
+									"key": "device_id",
+									"value": "device1"
+								}
+							]
+						},
+						"description": "Adds control for remotely controlling devices identified by the device ID."
+					},
+					"response": [
+						{
+							"id": "74075531-5294-4616-99f5-10c2d6bb9c79",
+							"name": "Add remote control",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"action\": \"turn_on\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/devices/:device_id/control",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"devices",
+										":device_id",
+										"control"
+									],
+									"variable": [
+										{
+											"key": "device_id",
+											"value": "device1"
+										}
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"device\": \"device1\",\n  \"action\": \"turn_on\",\n  \"status\": \"success\",\n  \"timestamp\": \"2023-05-29T11:30:00Z\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Add firmware updates",
+					"id": "d7381a24-0d71-4478-9558-1884a4956448",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"version\": \"2.0\",\n  \"url\": \"https://firmware.example.com/device1/2.0\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/devices/:device_id/firmware",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"devices",
+								":device_id",
+								"firmware"
+							],
+							"variable": [
+								{
+									"key": "device_id",
+									"value": "device1"
+								}
+							]
+						},
+						"description": "Adds the firmware updates (version and URL) to the devices identified by the device ID."
+					},
+					"response": [
+						{
+							"id": "27cc3c08-424e-49de-a879-b982a72bb78e",
+							"name": "Add firmware updates",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"version\": \"2.0\",\n  \"url\": \"https://firmware.example.com/device1/2.0\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/devices/:device_id/firmware",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"devices",
+										":device_id",
+										"firmware"
+									],
+									"variable": [
+										{
+											"key": "device_id",
+											"value": "device1"
+										}
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"device\": \"device1\",\n  \"firmware\": {\n    \"version\": \"2.0\",\n    \"url\": \"https://firmware.example.com/device1/2.0\",\n    \"status\": \"pending\",\n    \"timestamp\": \"2023-05-29T12:00:00Z\"\n  }\n}"
+						}
+					]
+				}
+			],
+			"id": "64d5ad39-d9cd-40c0-bb7e-716e5daf2ccf",
+			"description": "Device control refers to the capability to remotely manage and control the behavior, operations, and configurations of IoT devices within an IoT ecosystem. It enables administrators or authorized users to interact with and exert control over IoT devices to perform specific actions, modify settings, and execute commands."
+		},
+		{
+			"name": "Device diagnostics and maintenance",
+			"item": [
+				{
+					"name": "Get device health status",
+					"id": "d108e791-2331-46ea-affe-e031b62939c2",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/devices/:device_id/health",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"devices",
+								":device_id",
+								"health"
+							],
+							"variable": [
+								{
+									"key": "device_id",
+									"value": "device1"
+								}
+							]
+						},
+						"description": "Returns whether the device is healthy or not."
+					},
+					"response": [
+						{
+							"id": "d4547bca-0f2a-4da5-9500-dd2764776a5c",
+							"name": "Get device health status",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/devices/:device_id/health",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"devices",
+										":device_id",
+										"health"
+									],
+									"variable": [
+										{
+											"key": "device_id",
+											"value": "device1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"device\": \"device1\",\n  \"status\": \"healthy\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get device maintenance status",
+					"id": "69e865f7-8e4b-4c8e-83f2-6e114a0e8599",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/devices/:device_id/maintenance ",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"devices",
+								":device_id",
+								"maintenance "
+							],
+							"variable": [
+								{
+									"key": "device_id",
+									"value": "device1"
+								}
+							]
+						},
+						"description": "Returns the maintenance tasks happening on devices like firmware upgrades, diagnostics etc."
+					},
+					"response": [
+						{
+							"id": "3d94f755-6b1c-499c-bdef-f031f591d072",
+							"name": "Get device maintenance status",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/devices/:device_id/maintenance ",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"devices",
+										":device_id",
+										"maintenance "
+									],
+									"variable": [
+										{
+											"key": "device_id",
+											"value": "device1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"device\": \"device1\",\n  \"message\": \"Maintenance operation initiated\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get device troubleshoot status",
+					"id": "9793bf13-ba7e-43ec-9318-4b574ad025fe",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/devices/:device_id/troubleshoot",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"devices",
+								":device_id",
+								"troubleshoot"
+							],
+							"variable": [
+								{
+									"key": "device_id",
+									"value": "device1"
+								}
+							]
+						},
+						"description": "Returns the status of troubleshooting devices identified by the device ID."
+					},
+					"response": [
+						{
+							"id": "2181d535-1dee-46e6-aaaf-5eb99f8d817e",
+							"name": "Get device troubleshoot status",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/devices/:device_id/troubleshoot",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"devices",
+										":device_id",
+										"troubleshoot"
+									],
+									"variable": [
+										{
+											"key": "device_id",
+											"value": "device1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"device\": \"device1\",\n  \"troubleshooting\": {\n    \"status\": \"in_progress\",\n    \"message\": \"Troubleshooting operation initiated\"\n  }\n}"
+						}
+					]
+				}
+			],
+			"id": "17bf8cad-e19d-4ac6-bc7e-cd8a2b34d340",
+			"description": "Device diagnostics and maintenance refer to the process of monitoring, analyzing, and troubleshooting IoT devices to ensure their optimal performance, detect and resolve issues, and proactively maintain their health and functionality. It involves various activities aimed at identifying, diagnosing, and resolving problems to minimize downtime, improve reliability, and maximize the lifespan of IoT devices."
+		},
+		{
+			"name": "Device analytics",
+			"item": [
+				{
+					"name": "Get data analysis report",
+					"id": "f650c6da-2c67-4975-b76f-29fc153e67f2",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/devices/:device_id/analytics/data?start=2023-05-01T00:00:00Z&end=2023-05-31T23:59:59Z",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"devices",
+								":device_id",
+								"analytics",
+								"data"
+							],
+							"query": [
+								{
+									"key": "start",
+									"value": "2023-05-01T00:00:00Z"
+								},
+								{
+									"key": "end",
+									"value": "2023-05-31T23:59:59Z"
+								}
+							],
+							"variable": [
+								{
+									"key": "device_id",
+									"value": "device1"
+								}
+							]
+						},
+						"description": "Returns the analytics report of the device during the given timeframe, including average temperature, max temperature, and min temperature."
+					},
+					"response": [
+						{
+							"id": "f618db00-2b68-46fd-bcbf-4580e39e7a22",
+							"name": "Get data analysis report",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/devices/:device_id/analytics/data?start=2023-05-01T00:00:00Z&end=2023-05-31T23:59:59Z",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"devices",
+										":device_id",
+										"analytics",
+										"data"
+									],
+									"query": [
+										{
+											"key": "start",
+											"value": "2023-05-01T00:00:00Z"
+										},
+										{
+											"key": "end",
+											"value": "2023-05-31T23:59:59Z"
+										}
+									],
+									"variable": [
+										{
+											"key": "device_id",
+											"value": "device1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"device\": \"device1\",\n  \"analytics\": {\n    \"start\": \"2023-05-01T00:00:00Z\",\n    \"end\": \"2023-05-31T23:59:59Z\",\n    \"averageTemperature\": 23.7,\n    \"maxTemperature\": 28.5,\n    \"minTemperature\": 20.1\n  }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get device usage statistics",
+					"id": "0e6c8384-67c7-40da-b6f7-eebc8ab65406",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/devices/:device_id/analytics/usage?period=monthly",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"devices",
+								":device_id",
+								"analytics",
+								"usage"
+							],
+							"query": [
+								{
+									"key": "period",
+									"value": "monthly"
+								}
+							],
+							"variable": [
+								{
+									"key": "device_id",
+									"value": "device1"
+								}
+							]
+						},
+						"description": "Returns the monthly usage statistics of the device, including total connections, total data transferred, average connections per day and average data per day."
+					},
+					"response": [
+						{
+							"id": "72c9fe2e-8868-4fba-991e-f8c6a81c4eb0",
+							"name": "Get device usage statistics",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/devices/:device_id/analytics/usage?period=monthly",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"devices",
+										":device_id",
+										"analytics",
+										"usage"
+									],
+									"query": [
+										{
+											"key": "period",
+											"value": "monthly"
+										}
+									],
+									"variable": [
+										{
+											"key": "device_id",
+											"value": "device1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"device\": \"device1\",\n  \"usage\": {\n    \"period\": \"monthly\",\n    \"totalConnections\": 500,\n    \"totalDataTransferred\": 1000,\n    \"averageConnectionsPerDay\": 16.7,\n    \"averageDataPerDay\": 33.3\n  }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get device performance metrics",
+					"id": "e1fcc43e-ba98-4d88-9bde-eec4423e3659",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/devices/:device_id/analytics/performance?metric=latency&interval=hourly",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"devices",
+								":device_id",
+								"analytics",
+								"performance"
+							],
+							"query": [
+								{
+									"key": "metric",
+									"value": "latency"
+								},
+								{
+									"key": "interval",
+									"value": "hourly"
+								}
+							],
+							"variable": [
+								{
+									"key": "device_id",
+									"value": "device1"
+								}
+							]
+						},
+						"description": "Returns the hourly performance metrics of the device identified by the device ID."
+					},
+					"response": [
+						{
+							"id": "f21d97cb-3243-4f72-ac48-7c55d0a308c8",
+							"name": "Get device performance metrics",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/devices/:device_id/analytics/performance?metric=latency&interval=hourly",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"devices",
+										":device_id",
+										"analytics",
+										"performance"
+									],
+									"query": [
+										{
+											"key": "metric",
+											"value": "latency"
+										},
+										{
+											"key": "interval",
+											"value": "hourly"
+										}
+									],
+									"variable": [
+										{
+											"key": "device_id",
+											"value": "device1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"device\": \"device1\",\n  \"performance\": {\n    \"metric\": \"latency\",\n    \"interval\": \"hourly\",\n    \"data\": [\n      {\n        \"timestamp\": \"2023-05-29T00:00:00Z\",\n        \"value\": 50.2\n      },\n      {\n        \"timestamp\": \"2023-05-29T01:00:00Z\",\n        \"value\": 48.5\n      }\n    ]\n  }\n}"
+						}
+					]
+				}
+			],
+			"id": "af56dfdd-871f-4949-8d0d-19a530392c15",
+			"description": "Device analytics refers to the process of collecting, analyzing, and deriving meaningful insights from the data generated by IoT devices within an IoT ecosystem. It involves applying data analytics techniques and algorithms to gain valuable insights, patterns, and trends related to device behavior, usage, performance, and other key metrics."
+		},
+		{
+			"name": "Device grouping and filtering",
+			"item": [
+				{
+					"name": "Create a device group",
+					"id": "a1c9aaec-5e94-4779-8561-efd1b91ff361",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Living Room Devices\",\n  \"devices\": [\"device1\", \"device2\", \"device3\"]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/devices/groups",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"devices",
+								"groups"
+							]
+						},
+						"description": "Creates a new device group with name and devices list in it."
+					},
+					"response": [
+						{
+							"id": "71f9e121-90af-480d-9972-2820d422f2f9",
+							"name": "Create a device group",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"Living Room Devices\",\n  \"devices\": [\"device1\", \"device2\", \"device3\"]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/devices/groups",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"devices",
+										"groups"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"id\": \"group1\",\n  \"name\": \"Living Room Devices\",\n  \"devices\": [\"device1\", \"device2\", \"device3\"]\n}"
+						}
+					]
+				},
+				{
+					"name": "Get a device group",
+					"id": "7110e245-7789-4d60-9dd1-4f38808cc17e",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/devices/groups/:group_id",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"devices",
+								"groups",
+								":group_id"
+							],
+							"variable": [
+								{
+									"key": "group_id",
+									"value": "group"
+								}
+							]
+						},
+						"description": "Returns the list of devices in a group identified by the group ID."
+					},
+					"response": [
+						{
+							"id": "00d95076-ee79-4546-bee4-41590a6ef02a",
+							"name": "Get a device group",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/devices/groups/:group_id",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"devices",
+										"groups",
+										":group_id"
+									],
+									"variable": [
+										{
+											"key": "group_id",
+											"value": "group"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"id\": \"group1\",\n  \"name\": \"Living Room Devices\",\n  \"devices\": [\"device1\", \"device2\", \"device3\"]\n}"
+						}
+					]
+				},
+				{
+					"name": "Update a device group",
+					"id": "f98196d0-78e8-4e9c-aadf-4a7f59198843",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Kitchen Devices\",\n  \"devices\": [\"device1\", \"device2\", \"device4\"]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/devices/groups/:group_id",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"devices",
+								"groups",
+								":group_id"
+							],
+							"variable": [
+								{
+									"key": "group_id",
+									"value": "group1"
+								}
+							]
+						},
+						"description": "Updates the name and devices list for an existing group identified by the group ID."
+					},
+					"response": [
+						{
+							"id": "0786c882-d2bd-4684-a00e-4e44db40fcbf",
+							"name": "Update a device group",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"Kitchen Devices\",\n  \"devices\": [\"device1\", \"device2\", \"device4\"]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/devices/groups/:group_id",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"devices",
+										"groups",
+										":group_id"
+									],
+									"variable": [
+										{
+											"key": "group_id",
+											"value": "group1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"id\": \"group1\",\n  \"name\": \"Kitchen Devices\",\n  \"devices\": [\"device1\", \"device2\", \"device4\"]\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete a device group",
+					"id": "c2171847-550c-467a-8cc5-ed87675a6403",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/devices/groups/:group_id",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"devices",
+								"groups",
+								":group_id"
+							],
+							"variable": [
+								{
+									"key": "group_id",
+									"value": "group1"
+								}
+							]
+						},
+						"description": "Deletes an existing group identified by the group ID."
+					},
+					"response": [
+						{
+							"id": "a75c23ee-dae6-4bd1-af26-cfcae37e23b2",
+							"name": "Delete a device group",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/devices/groups/:group_id",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"devices",
+										"groups",
+										":group_id"
+									],
+									"variable": [
+										{
+											"key": "group_id",
+											"value": "group1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"group_id\": \"group1\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get device groups by device",
+					"id": "fc45f176-e780-4959-b5bb-1ca7ab25e944",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/devices/groups?device=device2",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"devices",
+								"groups"
+							],
+							"query": [
+								{
+									"key": "device",
+									"value": "device2"
+								}
+							]
+						},
+						"description": "Returns the list of groups containing a specific device identified by the device ID."
+					},
+					"response": [
+						{
+							"id": "ffee6017-199d-4132-aff4-253e350b3561",
+							"name": "Get device groups by device",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/devices/groups?device=device2",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"devices",
+										"groups"
+									],
+									"query": [
+										{
+											"key": "device",
+											"value": "device2"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"id\": \"group1\",\n    \"name\": \"Living Room Devices\",\n    \"devices\": [\"device1\", \"device2\", \"device4\"]\n  },\n  {\n    \"id\": \"group3\",\n    \"name\": \"Kitchen Devices\",\n    \"devices\": [\"device2\", \"device5\"]\n  }\n]"
+						}
+					]
+				}
+			],
+			"id": "c4c7e105-b1e7-441b-a769-3cfb3d891716",
+			"description": "Device grouping and filtering refer to mechanisms used to organize and categorize devices based on specific criteria. These features provide ways to manage and control devices efficiently within an IoT ecosystem."
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				],
+				"id": "3e59f0c6-8ee4-43e8-90cd-c15fb8bbe927"
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				],
+				"id": "03af1296-df92-4c05-9be2-7034faff1dd2"
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "457abef6-60d3-4a2f-a1aa-1876ca3ae672",
+			"key": "base_url",
+			"value": "https://d00a5909-a56c-4983-9270-246198202787.mock.pstmn.io"
+		}
+	]
+}
