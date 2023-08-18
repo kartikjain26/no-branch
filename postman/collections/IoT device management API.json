@@ -13,10 +13,10 @@
 				{
 					"name": "Get devices",
 					"id": "fcb297ca-def5-4ae3-a946-1c510bbb0f0d",
-					"protocolProfileBehavior": {
+					"prossssstocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
-					"request": {
+					"requestttt": {
 						"method": "GET",
 						"header": [],
 						"url": {
